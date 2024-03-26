@@ -72,7 +72,20 @@ function App() {
     }
   }
   
+  function createCounter2 () {
+
+    return function () {
+      if(count !== 0){
+        return setCount(count - 1);        
+      } else {
+        alert('Ниже 0 не идёт )');
+        
+      }
+    }
+  }
+
   const counter = createCounter();
+  const counter2 = createCounter2();
 
 
   return (
@@ -85,7 +98,8 @@ function App() {
       <div className="actions">
         <input className="task-input" type="text" value={inputTask} onChange={handleInputChange} />
         <button className="btn" onClick={createTask}>Создать</button>
-        <button className="btn" onClick={counter}>Увеличить</button>
+        <button className="btn" onClick={counter}>+</button>
+        <button className="btn" onClick={counter2}>-</button>
       </div>
 
       <ul className='list'>
