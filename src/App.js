@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles/style.css'
 import './App.css';
+import audio from './sound/Kozel-Oret.mp3';
 
 let todoList = [
   {task: "Купить молоко", done: false, deadline: "2024-02-23"},
@@ -19,6 +20,8 @@ let todoList = [
   {task: "Послать резюме", done: true, deadline: "2024-02-20"},
   {task: "Поехать в отпуск", done: false, deadline: "2024-02-29"}
 ];
+
+const alertSound = new Audio(audio);
 
 const ToDo = (props) => {
   const [isDone, setIsDone] = useState(props.isDone);
@@ -78,8 +81,8 @@ function App() {
       if(count !== 0){
         return setCount(count - 1);        
       } else {
+        alertSound.play();
         alert('Ниже 0 не идёт )');
-        
       }
     }
   }
