@@ -65,14 +65,14 @@ function App() {
 
   const [count, setCount] = useState(0);
 
-  function createCounter () {
+  function createCounterPlus () {
 
     return function () {
       return setCount(count + 1);
     }
   }
   
-  function createCounter2 () {
+  function createCounterMinus () {
 
     return function () {
       if(count !== 0){
@@ -84,8 +84,8 @@ function App() {
     }
   }
 
-  const counter = createCounter();
-  const counter2 = createCounter2();
+  const counterPlus = createCounterPlus();
+  const counterMinus = createCounterMinus();
 
 
   return (
@@ -98,8 +98,8 @@ function App() {
       <div className="actions">
         <input className="task-input" type="text" value={inputTask} onChange={handleInputChange} />
         <button className="btn" onClick={createTask}>Создать</button>
-        <button className="btn" onClick={counter}>+</button>
-        <button className="btn" onClick={counter2}>-</button>
+        <button className="btn" onClick={counterPlus}>+</button>
+        <button className="btn" onClick={counterMinus}>-</button>
       </div>
 
       <ul className='list'>
