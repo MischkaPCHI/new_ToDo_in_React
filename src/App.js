@@ -3,18 +3,7 @@ import './styles/style.css'
 import './App.css';
 import Counter from './components/counter';
 import todoList from './todoList';
-
-const ToDo = (props) => {
-  const [isDone, setIsDone] = useState(props.isDone);
-
-  const clickToggle = () => {
-    setIsDone(!isDone);
-  };
-
-  return (
-    <li className={isDone ? 'list-item_done' : 'list-item'} onClick={clickToggle}>{props.title}</li>
-  );
-};
+import { ToDo } from './components/todo';
 
 function App() {
 
@@ -46,8 +35,6 @@ function App() {
     setTodoList(savedTask);
   }
   },[]);
-
-
 
   return (
     <>

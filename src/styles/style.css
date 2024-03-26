@@ -31,7 +31,7 @@ body {
                     #e02862, 
                     #fadd3a);
     -webkit-text-stroke: transparent 1.2px;
-    background-size: 150% 150%;
+    background-size: 200% 200%;
     animation: gradient 20s ease infinite;
 }
 
