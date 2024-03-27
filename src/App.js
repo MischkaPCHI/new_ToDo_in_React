@@ -1,40 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './styles/style.css'
 import './App.css';
 import Counter from './components/counter';
-import todoList from './todoList';
 import { ToDo } from './components/todo';
+import useToDoList from './components/useToDo';
 
 function App() {
 
-  const [inputTask, setTask] = useState('');
-  const [todo, setTodoList] = useState(todoList);
-
-  const handleInputChange = (evt) => {
-    setTask(evt.target.value);
-  };
-
-  const createTask = () => {
-    if (inputTask !== '') {
-
-      const newTask = {
-        task: inputTask,
-        done: false,
-        deadline: `${new Date().getDate()}-${new Date().getMonth()+1}-${new Date().getFullYear()}`
-      };
-      setTodoList([...todo, newTask]);
-      setTask('');
-      sessionStorage.setItem("todoList", JSON.stringify([...todo, newTask]));
-    }
-  };
-
-  useEffect(() => {
-  const savedTask = JSON.parse(sessionStorage.getItem("todoList"));
-
-  if (savedTask) {
-    setTodoList(savedTask);
-  }
-  },[]);
+  const useToDo = useToDoList();
 
   return (
     <>
@@ -44,8 +17,8 @@ function App() {
     <div className="todo-list">
 
       <div className="actions">
-        <input className="task-input" type="text" value={inputTask} onChange={handleInputChange} />
-        <button className="btn" onClick={createTask}>Создать</button>
+        <input className="task-input" type="text" value={useToDo.inputTask} onChange={useToDo.handleInputChange} />
+        <button className="btn" onClick={useToDo.createTask}>Создать</button>
       </div>
 
       <div className='actions'>
@@ -53,7 +26,7 @@ function App() {
       </div>
 
       <ul className='list'>
-          {todo.map((todo, i) => (<ToDo key = {i} isDone = {todo.done} title = {todo.task} />))}
+          {useToDo.todo.map((todoItem, i) => (<ToDo key = {i} isDone = {todoItem.done} title = {todoItem.task} />))}
       </ul>
 
     </div>
