@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/style.css'
 import './App.css';
 import Counter from './components/counter';
