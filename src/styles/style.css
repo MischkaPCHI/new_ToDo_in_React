@@ -1,123 +1,119 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .title {
-    font-size: 24px;
-    text-align: center;
-    color: rgb(189, 72, 235);
+  font-size: 24px;
+  text-align: center;
+  color: rgb(189, 72, 235);
 }
 
 .num {
-    font-size: 20px;
-    text-align: center;
+  font-size: 20px;
+  text-align: center;
 }
 
 body {
-    background-color: rgb(82, 79, 79);
+  background-color: rgb(82, 79, 79);
 }
 
 .todo-list {
-    margin-top: 32px;
-    background-color: lightblue;
-    border-radius: 4px;
-    padding: 8px;
-    max-width: 400px;
-    margin: 0 auto;
+  margin-top: 32px;
+  background-color: lightblue;
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 400px;
+  margin: 0 auto;
 
-    background-image: linear-gradient(to left top, 
-                    #18efba, 
-                    #1a9eea, 
-                    #e02862, 
-                    #fadd3a);
-    -webkit-text-stroke: transparent 1.2px;
-    background-size: 200% 200%;
-    animation: gradient 20s ease infinite;
+  background-image: linear-gradient(to left top, #18efba, #1a9eea, #e02862, #fadd3a);
+  -webkit-text-stroke: transparent 1.2px;
+  background-size: 200% 200%;
+  animation: gradient 20s ease infinite;
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0 0;
-    }
-    25% {
-        background-position: 100% 0;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    75% {
-        background-position: 0 100%;
-    }
-    100% {
-        background-position: 0 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-    height: 32px;
-    min-width: 64px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 16px;
+  height: 32px;
+  min-width: 64px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 16px;
 }
 
 .counter-btn {
-    height: 32px;
-    min-width: 30px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 16px;
-    font-size: 20px;
+  height: 32px;
+  min-width: 30px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 16px;
+  font-size: 20px;
 }
 
 .task-input {
-    height: 32px;
-    border-radius: 4px;
-    border: 0;
-    flex: 1;
+  height: 32px;
+  border-radius: 4px;
+  border: 0;
+  flex: 1;
 }
 
 .list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    margin: 0 auto 0 0;
-    width: 90%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 0 auto 0 0;
+  width: 90%;
 }
 
 .list-item {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    border-radius: 4px;
-    background-color: bisque;
-    margin: 8px 0;
-    padding: 8px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: 4px;
+  background-color: bisque;
+  margin: 8px 0;
+  padding: 8px;
 }
 
 .list-item_done {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    /* text-decoration: line-through; */
-    background-color: darkgray;
-    margin: 8px 0;
-    padding: 8px;
-    border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  /* text-decoration: line-through; */
+  background-color: darkgray;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .list-item_done::after {
-    margin: 0 5px;
-    content: '\2714';
-    color: green;
+  margin: 0 5px;
+  content: "\2714";
+  color: green;
 }
