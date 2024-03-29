@@ -30,7 +30,7 @@ const useToDoList = () => {
     }
   }, []);
 
-  return { inputTask, handleInputChange, createTask, todo };
+  return { inputTask, handleInputChange, createTask, todo, setTodoList };
 };
 
 export default useToDoList;
