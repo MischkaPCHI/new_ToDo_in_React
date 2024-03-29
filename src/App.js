@@ -8,7 +8,6 @@ import menuItems from "./components/menuItems.";
 
 function App() {
   const useToDo = useToDoList();
-  const array = useToDo.todo;
 
   const [filter, setFilter] = useState("all");
   const [mode, setMode] = useState("todo");
@@ -47,7 +46,7 @@ function App() {
           </div>
 
           <ul className="list">
-            {array
+            {useToDo.todo
               .filter(todoItem => {
                 if (filter === 'done') return todoItem.done;
                 if (filter === 'undone') return !todoItem.done;
