@@ -63,8 +63,8 @@ function App() {
       {mode === "menu" &&(
         <div className="todo-list">
           <ul className="list">
-            {menuItems.map((item, index) => (
-              <li className="list-item" key={index}>{item}</li>
+            {menuItems.map((item, i) => (
+              <li className="list-item" key={i}>{item}</li>
             ))}
           </ul>
         </div>
