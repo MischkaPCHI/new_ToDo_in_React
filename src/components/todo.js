@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export const ToDo = (props) => {
   const { id, isDone, title, setTodoList, todo } = props;
 
   const [isDoneState, setIsDone] = useState(isDone);
-
-  useEffect(() => {
-    setIsDone(isDone);
-  }, [isDone]);
 
   const clickToggle = () => {
     const updatedTodoList = todo.map(item => {
