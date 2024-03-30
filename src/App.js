@@ -42,14 +42,14 @@ function App() {
           <div className="actions">
             <button className={'btn'} onClick={() => handleFilterChange('all')}>Всё</button>
             <button className={'btn'} onClick={() => handleFilterChange('done')}>Выполнено</button>
-            <button className={'btn'} onClick={() => handleFilterChange('undone')}>Не выполнено</button>
+            <button className={'btn'} onClick={() => handleFilterChange('not done')}>Не выполнено</button>
           </div>
 
           <ul className="list">
             {useToDo.todo
               .filter(todoItem => {
                 if (filter === 'done') return todoItem.done;
-                if (filter === 'undone') return !todoItem.done;
+                if (filter === 'not done') return !todoItem.done;
                 return true;
               })
               .map((todoItem, i) => (

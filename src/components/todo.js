@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const ToDo = (props) => {
   const { id, isDone, title, setTodoList, todo } = props;
 
   const [isDoneState, setIsDone] = useState(isDone);
+
+  useEffect(() => {
+    const storedIsDone = sessionStorage.getItem(`todo_${id}`);
+    if (storedIsDone !== null) {
+      setIsDone(JSON.parse(storedIsDone));
+    }
+  }, [id]);
 
   const clickToggle = () => {
     const updatedTodoList = todo.map(item => {
@@ -14,6 +21,7 @@ export const ToDo = (props) => {
     });
     setTodoList(updatedTodoList);
     setIsDone(!isDoneState);
+    sessionStorage.setItem(`todo_${id}`, JSON.stringify(!isDoneState));
   };
 
   return (
