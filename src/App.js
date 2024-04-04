@@ -12,10 +12,15 @@ function App() {
   const [filter, setFilter] = useState("all");
   const [mode, setMode] = useState("todo");
   const [title, setTitle] = useState("ToDo");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleFilterChange = (filterType) => {
     setFilter(filterType);
   }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
@@ -59,14 +64,21 @@ function App() {
         </div>
       )}
 
-      {mode === "menu" &&(
-        <div className="todo-list">
-          <ul className="list">
-            {menuItems.map((item, i) => (
-              <li className="list-item" key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
+      {mode === "menu" && (
+              <div className="todo-list">
+                <button className="btn" onClick={toggleMenu}>🍔Hamburger</button>
+                {isMenuOpen && (
+                  <div className="list">
+                    <ul>
+                      {menuItems.map((item, i) => (
+                        <li className="list-item" key={i}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
       )}
     </>
   );
