@@ -7,32 +7,25 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   function createCounterPlus() {
-    return function () {
-      return setCount(prevCount => prevCount + 1);
-    };
+    setCount(prevCount => prevCount + 1);
   }
 
   function createCounterMinus() {
-    return function () {
       if (count !== 0) {
-        return setCount(prevCount => prevCount - 1);
+        setCount(prevCount => prevCount - 1);
       } else {
         alertSound.play();
         alert("Ниже 0 не идёт )");
       }
-    };
   }
-
-  const counterPlus = createCounterPlus();
-  const counterMinus = createCounterMinus();
 
   return (
     <>
       <p className="num">{count}</p>
-      <button className="counter-btn" onClick={counterPlus}>
+      <button className="counter-btn" onClick={createCounterPlus}>
         +
       </button>
-      <button className="counter-btn" onClick={counterMinus}>
+      <button className="counter-btn" onClick={createCounterMinus}>
         -
       </button>
     </>
