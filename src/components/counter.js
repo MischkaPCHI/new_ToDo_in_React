@@ -8,14 +8,14 @@ const Counter = () => {
 
   function createCounterPlus() {
     return function () {
-      return setCount(count + 1);
+      return setCount(prevCount => prevCount + 1);
     };
   }
 
   function createCounterMinus() {
     return function () {
       if (count !== 0) {
-        return setCount(count - 1);
+        return setCount(prevCount => prevCount - 1);
       } else {
         alertSound.play();
         alert("Ниже 0 не идёт )");

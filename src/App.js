@@ -1,5 +1,4 @@
 import "./styles/style.css";
-import "./App.css";
 import Counter from "./components/counter";
 import { ToDo } from "./components/todo";
 import useToDoList from "./components/useToDo";
@@ -35,22 +34,9 @@ function App() {
       <div className="actions">
         <button
           className={"btn"}
-          onClick={() => {
-            setMode("menu");
-            setTitle("Menu");
-          }}
-        >
-          🍴Menu
-        </button>
-        <button
-          className={"btn"}
-          onClick={() => {
-            setMode("todo");
-            setTitle("ToDo");
-          }}
-        >
-          📃ToDo
-        </button>
+          onClick={() => {setMode("menu"); setTitle("Menu");}}>🍴Menu</button>
+          <button
+          className={"btn"} onClick={() => {setMode("todo"); setTitle("ToDo");}}>📃ToDo</button>
       </div>
 
       {mode === "todo" && (
